@@ -16,8 +16,8 @@ async function bootstrap() {
       },
     }),
   );
-  app.useStaticAssets(join(__dirname, '..', 'public'), {
-    prefix: '/public',
+  app.useStaticAssets(join(__dirname, '..', 'public/upload'), {
+    prefix: '/images',
   });
   app.enableCors();
   await app.listen(3000);

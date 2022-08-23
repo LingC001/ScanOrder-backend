@@ -30,9 +30,11 @@ export class FoodsController {
     @UploadedFile() file: Express.Multer.File,
     @Body() createFoodDto: CreateFoodDto,
   ) {
-    const hostName = request.headers.host;
+    const { NODE_ENV } = process.env;
+    const hostName =
+      NODE_ENV === 'development' ? 'localhost:3000' : 'ybdev.top';
     const resName = replaceFileName(file.originalname);
-    createFoodDto.image = `${hostName}/public/upload/${resName}`;
+    createFoodDto.image = `${hostName}/images/${resName}`;
     const writeImage = createWriteStream(
       join(__dirname, '..', '../public/upload', `${resName}`),
     );
