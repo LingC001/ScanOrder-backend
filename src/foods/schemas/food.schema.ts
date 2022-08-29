@@ -21,7 +21,7 @@ export class Food extends Document {
   image: string;
 
   @Prop()
-  recommended: string;
+  recommended: boolean;
 }
 
 export const FoodSchema = SchemaFactory.createForClass(Food);

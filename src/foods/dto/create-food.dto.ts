@@ -1,4 +1,4 @@
-import { IsNotEmpty } from 'class-validator';
+import { IsNotEmpty, IsBoolean } from 'class-validator';
 
 export class CreateFoodDto {
   @IsNotEmpty()
@@ -16,5 +16,6 @@ export class CreateFoodDto {
   image: string;
 
   @IsNotEmpty()
+  @IsBoolean()
   readonly recommended: boolean;
 }
