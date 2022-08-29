@@ -1,4 +1,4 @@
 ## Description
 Scan QR code to order
 ## Keyword
-vue node koa typescript full-stack
+node nestjs typescript mongodb mongoose RESTful
