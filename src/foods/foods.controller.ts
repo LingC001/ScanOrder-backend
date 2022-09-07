@@ -34,7 +34,7 @@ export class FoodsController {
     const hostName =
       NODE_ENV === 'development' ? 'localhost:3000' : 'ybdev.top';
     const resName = replaceFileName(file.originalname);
-    createFoodDto.image = `${hostName}/images/${resName}`;
+    createFoodDto.image = `http://${hostName}/images/${resName}`;
     const writeImage = createWriteStream(
       join(__dirname, '..', '../public/upload', `${resName}`),
     );
